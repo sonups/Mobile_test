@@ -1,0 +1,13 @@
+:caps:
+  :platformName: 'Android'
+  #:deviceName: 'Nexus5X'
+  #:browserName: ''
+  :app: 'https://testingbot.com/appium/sample.apk'
+  #TODO add app activity
+  #:package: ''
+  #:appActivity: ''
+  #:newCommandTimeout: 300
+  :automationName: "UiAutomator2"
+:appium_lib:
+  :wait_timeout: 30,
+  :wait_interval: 1
