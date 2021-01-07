@@ -1,5 +1,5 @@
 #Actions class helper
-class Actions
+class ActionsHelper
 
   def initialize(driver)
     @driver = driver
@@ -27,6 +27,10 @@ class Actions
 
   def type(locator_type, locator, input)
     find(locator_type, locator).send_keys input
+  end
+
+  def type_easy(identifier, input)
+    type(identifier.keys[0], identifier.values[0], input)
   end
 
   def click_on(locator_type, locator)

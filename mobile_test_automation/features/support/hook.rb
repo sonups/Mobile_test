@@ -1,11 +1,14 @@
+# frozen_string_literal: true
+
 require 'pry'
 require_relative '../../features/support/drivers/android_driver'
 require_relative '../../features/support/action'
 class Hook
   attr_reader :is_driver_created
   attr_accessor :driver
-  def setup
 
+  NUMBER_FIELD1 = { accessibility_id: 'inputA' }.freeze
+  def setup
     # options = {
     #           caps: {
     #             platformName: :android,
@@ -19,28 +22,28 @@ class Hook
     #
 
     if !is_driver_created
-          @port = { port: "4723"  }
-          driver = Class.new(AndroidDriver).instance
-          driver.create_driver(@port)
-          @is_driver_created = true
-          driver.start_driver
-          actions = Actions.new(driver)
-          actions.wait_until_element(:accessibility_id,'inputA' )
-          actions.type(:id, 'inputA',10)
+      @port = { port: '4723' }
+      driver = Class.new(AndroidDriver).instance
+      driver.create_driver(@port)
+      @is_driver_created = true
+      driver.start_driver
+      # actions = ActionsHelper.new(driver)
+      # actions.wait_until_element(:accessibility_id, 'inputA')
+      # actions.type_easy(NUMBER_FIELD1, 10)
 
     else
-            puts "hi"
+      puts 'hi'
     end
-            #prepare_driver
+    # prepare_driver
   end
-#   def prepare_driver
-#   @configuration = { props: props, location: prepare_location }
-#   #@local_driver.create_driver(@configuration)
-#   #@local_driver.start_driver
-# end
-def tear_down
-  LocalDriver.instance.stop_app
-  #helper.kill_appium if start_appium?
-end
 
+  #   def prepare_driver
+  #   @configuration = { props: props, location: prepare_location }
+  #   #@local_driver.create_driver(@configuration)
+  #   #@local_driver.start_driver
+  # end
+  def tear_down
+    LocalDriver.instance.stop_app
+    # helper.kill_appium if start_appium?
+  end
 end
