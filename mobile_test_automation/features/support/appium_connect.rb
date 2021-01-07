@@ -22,6 +22,10 @@ def basic
   wait = Selenium::WebDriver::Wait.new(timeout: 30)
   wait.until { driver.find_element(:accessibility_id, 'inputA').displayed? }
 
+  driver.find_element(:id, 'inputA').send_keys 8
+
+  driver.find_element(:accessibility_id, 'inputB').send_keys 10
+
   driver.find_element(:accessibility_id, 'inputA').send_keys 5
   driver.find_element(:accessibility_id, 'inputB').send_keys 10
   result = driver.find_element(:accessibility_id, 'sum')

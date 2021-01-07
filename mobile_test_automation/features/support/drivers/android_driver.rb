@@ -12,7 +12,7 @@ class AndroidDriver < BaseDriver
 
   def create_driver(configuration)
     super
-    binding.pry
+
     #prepare_capabilities(configuration[:port])
   end
 

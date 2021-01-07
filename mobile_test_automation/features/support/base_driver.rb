@@ -16,7 +16,7 @@ class BaseDriver
   end
 
   def start_driver
-    binding.pry
+
     appium_driver = Appium::Driver.new(@capabilities, true)
     @driver = appium_driver.start_driver
     Appium.promote_appium_methods Object

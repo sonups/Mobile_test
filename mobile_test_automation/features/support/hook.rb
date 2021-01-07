@@ -17,15 +17,16 @@ class Hook
     #           }
     #         }
     #
-    binding.pry
-    if !is_driver_created
 
+    if !is_driver_created
           @port = { port: "4723"  }
           driver = Class.new(AndroidDriver).instance
           driver.create_driver(@port)
           @is_driver_created = true
           driver.start_driver
           actions = Actions.new(driver)
+          actions.wait_until_element(:accessibility_id,'inputA' )
+          actions.type(:id, 'inputA',10)
 
     else
             puts "hi"
