@@ -2,46 +2,41 @@
 
 require 'pry'
 require_relative '../../features/support/drivers/android_driver'
-require_relative '../../features/support/action'
+require_relative '../../features/support/drivers/android_smart_lock_driver'
+require_relative '../../features/support/helper_class/actions_helper'
+
 class Hook
+  include Singleton
   attr_reader :is_driver_created
   attr_accessor :driver
 
   NUMBER_FIELD1 = { accessibility_id: 'inputA' }.freeze
-  def setup
-    # options = {
-    #           caps: {
-    #             platformName: :android,
-    #             app: 'https://testingbot.com/appium/sample.apk'
-    #           },
-    #           appium_lib: {
-    #             wait_timeout: 30,
-    #             wait_interval: 1
-    #           }
-    #         }
-    #
 
-    if !is_driver_created
-      @port = { port: '4723' }
-      driver = Class.new(AndroidDriver).instance
-      driver.create_driver(@port)
-      @is_driver_created = true
-      driver.start_driver
-      # actions = ActionsHelper.new(driver)
-      # actions.wait_until_element(:accessibility_id, 'inputA')
-      # actions.type_easy(NUMBER_FIELD1, 10)
+  def accept_smark_lock_security
+    @port = { port: '4723' }
 
-    else
-      puts 'hi'
-    end
-    # prepare_driver
+    smart_lock_driver = Class.new(SmartLockDriver).instance
+    smart_lock_driver.create_driver(@port)
+    smart_lock_driver.start_driver
   end
 
-  #   def prepare_driver
-  #   @configuration = { props: props, location: prepare_location }
-  #   #@local_driver.create_driver(@configuration)
-  #   #@local_driver.start_driver
-  # end
+  def setup_driver
+    if !is_driver_created
+      @port = { port: '4723' }
+      @driver = Class.new(AndroidDriver).instance
+      @driver.create_driver(@port)
+      @is_driver_created = true
+      @driver.start_driver
+    end
+    is_driver_created
+  end
+
+  def launch_app(package, activity)
+    # @driver
+    # @driver.launch_app
+    @driver.start_activity app_package: package, app_activity: activity
+  end
+
   def tear_down
     LocalDriver.instance.stop_app
     # helper.kill_appium if start_appium?

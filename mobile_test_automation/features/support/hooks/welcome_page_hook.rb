@@ -1,0 +1,4 @@
+
+class WelcomePageHook
+
+end

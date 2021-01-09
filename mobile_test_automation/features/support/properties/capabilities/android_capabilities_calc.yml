@@ -1,0 +1,14 @@
+:caps:
+  :platformName: 'Android'
+  #:deviceName: 'Nexus5X'
+  #:browserName: ''
+  :noReset: true
+  #:app: 'http://localhost:8081/files/app-world-beta.apk'
+  #TODO add app activity
+  :package: 'com.android.calculator2'
+  :appActivity: 'com.android.calculator2.Calculator'
+  #:newCommandTimeout: 300
+  #:automationName: "UiAutomator2"
+:appium_lib:
+  :wait_timeout: 30,
+  :wait_interval: 1

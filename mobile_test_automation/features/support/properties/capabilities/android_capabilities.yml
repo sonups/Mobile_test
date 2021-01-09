@@ -1,13 +1,19 @@
 :caps:
   :platformName: 'Android'
-  #:deviceName: 'Nexus5X'
+  :platformVersion: '7.0'
+  :deviceName: 'Nexus5X_duplicate'
   #:browserName: ''
-  :app: 'https://testingbot.com/appium/sample.apk'
+  :noReset: true
+  #:app: 'http://localhost:8081/files/app-world-beta.apk'
   #TODO add app activity
-  #:package: ''
-  #:appActivity: ''
-  #:newCommandTimeout: 300
-  :automationName: "UiAutomator2"
+  :appPackage: 'vivino.web.app.beta'
+  #:appActivity: 'com.sphinx_solution.activities.OOTB2'
+  #:appActivity: 'vivino.web.app.beta.com.sphinx_solution.Launcher'
+  #:appActivity: 'com.android.vivino.activities.MagicLinkActivity'
+  #:appActivity: 'android.intent.category.LAUNCHER'
+  :appActivity: 'com.sphinx_solution.activities.SplashActivity'
+  :newCommandTimeout: 300
+  #:automationName: "UiAutomator2"
 :appium_lib:
   :wait_timeout: 30,
   :wait_interval: 1
