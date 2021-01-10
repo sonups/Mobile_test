@@ -1,6 +1,8 @@
-class Test 
+# frozen_string_literal: true
+
+class Test
   def initialize
-   puts "I love India"
+    puts 'I love India'
   end
 end
 

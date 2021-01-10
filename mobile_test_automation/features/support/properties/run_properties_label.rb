@@ -1,7 +1,7 @@
 module RunProperties
-  APP ||= 'app'
-  LOCAL ||= 'local'
-  EXTERNAL ||= 'external'
-  DEVICE ||= 'ios_device'
-  SIMULATOR ||= 'ios_simulator'
+  APP ||= 'app'.freeze
+  LOCAL ||= 'local'.freeze
+  EXTERNAL ||= 'external'.freeze
+  DEVICE ||= 'ios_device'.freeze
+  SIMULATOR ||= 'ios_simulator'.freeze
 end

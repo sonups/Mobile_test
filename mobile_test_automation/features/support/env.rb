@@ -1,6 +1,6 @@
 require 'rubygems'
 require 'rspec/expectations'
-#require 'appium_lib'
+# require 'appium_lib'
 require 'selenium-webdriver'
 require 'pry'
 require_relative '../support/properties/run_properties_label'
@@ -25,6 +25,4 @@ def props
   YAML.load_file(File.join(File.dirname(__FILE__), '/props.yml'))
 end
 
-def port
-  @port
-end
+attr_reader :port

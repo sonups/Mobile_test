@@ -21,7 +21,7 @@ class Hook
   end
 
   def setup_driver
-    if !is_driver_created
+    unless is_driver_created
       @port = { port: '4723' }
       @driver = Class.new(AndroidDriver).instance
       @driver.create_driver(@port)

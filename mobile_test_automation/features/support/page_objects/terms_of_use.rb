@@ -7,7 +7,6 @@ class TermsOfUsePopUp
   #    accept<< android:id/button1 ACCEPT
   #
 
-
   # EMAIL = { id: 'vivino.web.app.beta:id/edtEmail' }.freeze
 
   attr_accessor :driver, :action_helper
@@ -21,5 +20,4 @@ class TermsOfUsePopUp
     action_helper.type(EMAIL, email)
     action_helper.type(PASSWORD, password)
   end
-
 end

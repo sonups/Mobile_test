@@ -1,6 +1,6 @@
 class GoogleSmartLockAlertPage
   NONE_OF_ABOVE = { id: 'cancel' }.freeze
-  SMART_LOCK_IDENTIFIER = { id: 'freezecredential_picker_layout' }
+  SMART_LOCK_IDENTIFIER = { id: 'freezecredential_picker_layout' }.freeze
   attr_accessor :driver, :action_helper
 
   def initialize(driver)
@@ -13,8 +13,6 @@ class GoogleSmartLockAlertPage
   end
 
   def click_none_of_above_if_alert_present
-    if action_helper.displayed?(SMART_LOCK_IDENTIFIER)
-      action_helper.click(NONE_OF_ABOVE)
-    end
+    action_helper.click(NONE_OF_ABOVE) if action_helper.displayed?(SMART_LOCK_IDENTIFIER)
   end
 end

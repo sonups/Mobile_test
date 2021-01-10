@@ -1,6 +1,5 @@
-#Helper class to simulate click, capture text, clear text, type appium actions
+# Helper class to simulate click, capture text, clear text, type appium actions
 class ActionsHelper
-
   def initialize(driver)
     @driver = driver
   end
@@ -30,8 +29,6 @@ class ActionsHelper
     wait = Selenium::WebDriver::Wait.new(timeout: 30)
     wait.until { driver.find_element(identifier).displayed? }
   end
-
-
 
   def clear(identifier)
     find_element(identifier).clear
@@ -64,13 +61,12 @@ class ActionsHelper
     driver.get_context
   end
 
-  def wait_for(seconds = 5)
-    Selenium::WebDriver::Wait.new(:timeout => seconds).until { yield }
+  def wait_for(seconds = 5, &block)
+    Selenium::WebDriver::Wait.new(timeout: seconds).until(&block)
   end
 
   def wait_until_element(identifier)
     wait = Selenium::WebDriver::Wait.new(timeout: 30)
     wait.until { find(identifier.keys[0], identifier.values[0]).displayed? }
   end
-
 end

@@ -1,6 +1,6 @@
-class Test 
+class Test
   def initialize
-   puts "I love India"
+    puts 'I love India'
   end
 end
 

@@ -25,5 +25,4 @@ class CountriesPopUp
     action_helper.type(EMAIL, email)
     action_helper.type(PASSWORD, password)
   end
-
 end

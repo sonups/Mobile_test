@@ -1,8 +1,9 @@
+# frozen_string_literal: true
 
 Given(/^Test ruby cucumber$/) do
-  puts "hello world"
+  puts 'hello world'
 end
 
 Given(/^Test scenario cucumber line$/) do
-  puts "hello world2"
+  puts 'hello world2'
 end

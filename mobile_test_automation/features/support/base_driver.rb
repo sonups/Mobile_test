@@ -1,6 +1,6 @@
 require 'singleton'
 require 'appium_lib'
-#Base class handling the appium driver features such as start driver, stop driver, restart automation app .
+# Base class handling the appium driver features such as start driver, stop driver, restart automation app .
 class BaseDriver
   include Singleton
   attr_accessor :driver
@@ -9,9 +9,9 @@ class BaseDriver
     @driver = nil
   end
 
-  $port = ENV['PORT'] || 4723
+  # $port = ENV['PORT'] || 4723
 
-  def create_driver(configuration)
+  def create_driver(_configuration)
     @capabilities = YAML.load_file(configuration_file)
   end
 

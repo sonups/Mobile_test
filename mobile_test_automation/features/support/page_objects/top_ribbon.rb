@@ -13,7 +13,6 @@ class TopRibbon
   #
   # RIBBON_TEXT - vivino.web.app.beta:id/tabanim_toolbar >> second
 
-
   attr_accessor :driver, :action_helper
 
   def initialize(driver)
@@ -25,5 +24,4 @@ class TopRibbon
     action_helper.type(EMAIL, email)
     action_helper.type(PASSWORD, password)
   end
-
 end

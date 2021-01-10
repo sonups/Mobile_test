@@ -7,8 +7,7 @@ class CreateAccountPage
   CONTINUE_WITH_GOOGLE = { id: 'vivino.web.app.beta:id/signupwithgoogle_layout' }.freeze
   NEXT = { id: 'vivino.web.app.beta:id/action_next' }.freeze
 
-
-  #if accessibility_id is used as locator prepare the constant like
+  # if accessibility_id is used as locator prepare the constant like
   #   I_HAVE_AN_ACCOUNT = { accessibility_id: 'txthaveaccount' }.freeze
 
   attr_accessor :driver, :action_helper
@@ -19,13 +18,9 @@ class CreateAccountPage
   end
 
   def type_email_and_password(email, password)
-
-    action_helper.wait_until_element(EMAIL);
+    action_helper.wait_until_element(EMAIL)
     action_helper.type(EMAIL, email)
     action_helper.type(PASSWORD, password)
     action_helper.click(NEXT)
   end
-
-
-
 end

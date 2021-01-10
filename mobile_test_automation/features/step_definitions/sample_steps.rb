@@ -31,9 +31,7 @@ end
 
 Given(/^I click on Need a account button if currently in Welcome back page$/) do
   welcome_back_page = WelcomeBackPage.new(Hook.driver)
-  if welcome_back_page.is_welcome_back_page
-    welcome_back_page.click_need_an_account
-  end
+  welcome_back_page.click_need_an_account if welcome_back_page.is_welcome_back_page
 end
 
 And(/^I type (.*) as email and (.*) as password in create account page$/) do |email, password|
@@ -41,13 +39,13 @@ And(/^I type (.*) as email and (.*) as password in create account page$/) do |em
   create_account_page.type_email_and_password(email, password)
 end
 
-And(/^I type auto-generated email with below password in create account page$/) do | table |
+And(/^I type auto-generated email with below password in create account page$/) do |table|
   @data = table.hashes
   data_at_first_row = @data[0]
   password = data_at_first_row['Password']
   create_account_page = CreateAccountPage.new(Hook.driver)
   t = Time.now
-  random_email = t.hour.to_s + t.min.to_s + t.sec.to_s + "@gmail.com"
+  random_email = "#{t.hour}#{t.min}#{t.sec}@gmail.com"
   create_account_page.type_email_and_password(random_email, password)
 end
 

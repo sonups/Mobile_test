@@ -5,14 +5,12 @@ class NewProfilePage
   FIRST_NAME = { id: 'vivino.web.app.beta:id/edtUserName' }.freeze
   LAST_NAME = { id: 'vivino.web.app.beta:id/edtUserSurname' }.freeze
   ADD_PHOTO = { id: 'vivino.web.app.beta:id/txt_addPhoto' }.freeze
-  ACCEPT_TERMS ={ id: 'vivino.web.app.beta:id/new_profile_agree_terms'}.freeze
+  ACCEPT_TERMS = { id: 'vivino.web.app.beta:id/new_profile_agree_terms' }.freeze
 
   # vivino.web.app.beta:id/txtCountryValue
   # vivino.web.app.beta:id/txtChangeLanguageValue
 
-
-
-  #if accessibility_id is used as locator prepare the constant like
+  # if accessibility_id is used as locator prepare the constant like
   #   I_HAVE_AN_ACCOUNT = { accessibility_id: 'txthaveaccount' }.freeze
 
   attr_accessor :driver, :action_helper, :screen_actions_helper
@@ -27,7 +25,6 @@ class NewProfilePage
     action_helper.wait_until_element(FIRST_NAME)
     action_helper.type(FIRST_NAME, first_name)
     action_helper.type(LAST_NAME, last_name)
-
   end
 
   def accept_terms_and_proceed
@@ -37,7 +34,4 @@ class NewProfilePage
     action_helper.wait_until_element(DONE_BUTTON)
     action_helper.click(DONE_BUTTON)
   end
-
-
-
 end
