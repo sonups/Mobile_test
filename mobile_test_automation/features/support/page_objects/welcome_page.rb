@@ -36,7 +36,7 @@ class WelcomePage
     true
   end
 
-  def is_page_displayed
+  def page_displayed?
     true if action_helper.displayed?(GET_STARTED)
   end
 end

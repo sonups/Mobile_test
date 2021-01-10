@@ -13,7 +13,7 @@ end
 
 Given(/^I click on (.*) button in WelcomePage$/) do |button|
   welcome_page = WelcomePage.new(Hook.driver)
-  if welcome_page.is_page_displayed
+  if welcome_page.page_displayed?
     case button
     when 'Get Started'
       welcome_page.click_get_started
@@ -31,7 +31,7 @@ end
 
 Given(/^I click on Need a account button if currently in Welcome back page$/) do
   welcome_back_page = WelcomeBackPage.new(Hook.driver)
-  welcome_back_page.click_need_an_account if welcome_back_page.is_welcome_back_page
+  welcome_back_page.click_need_an_account if welcome_back_page.welcome_back_page?
 end
 
 And(/^I type (.*) as email and (.*) as password in create account page$/) do |email, password|
@@ -56,7 +56,7 @@ end
 
 Then(/^I verify the (.*) tab is currently focussed$/) do |tab_name|
   top_list_page = TopListPage.new(Hook.driver)
-  top_list_page.is_current_tab_name_equal(tab_name, 'sds')
+  top_list_page.current_tab_name_equal?(tab_name, 'sds')
 end
 
 Then(/^I verify the main page is displayed$/) do
@@ -76,7 +76,7 @@ end
 
 And(/^I logout from the application if already logged in$/) do
   top_list_page = TopListPage.new(Hook.driver)
-  if top_list_page.is_logged_in
+  if top_list_page.logged_in?
     top_list_page.launch_settings
     settings_page = SettingPage.new(Hook.driver)
     settings_page.signout
@@ -90,7 +90,7 @@ end
 
 And(/^I delete account if already logged in$/) do
   top_list_page = TopListPage.new(Hook.driver)
-  if top_list_page.is_logged_in
+  if top_list_page.logged_in?
     top_list_page.launch_settings
     settings_page = SettingPage.new(Hook.driver)
     settings_page.delete_account

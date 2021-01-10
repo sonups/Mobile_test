@@ -16,9 +16,8 @@ class ActionsHelper
     driver.find_element(identifier.keys[0], identifier.values[0])
   end
 
-  def find_element_by_text(identifier, text)
-    elements = driver.find_elements(identifier)
-    binding.pry
+  def find_element_by_text(identifier, _text)
+    driver.find_elements(identifier)
   end
 
   def find_elements(identifier)
@@ -57,7 +56,7 @@ class ActionsHelper
     driver.title
   end
 
-  def get_context
+  def retrieve_context
     driver.get_context
   end
 

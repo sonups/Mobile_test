@@ -28,7 +28,7 @@ class WelcomeBackPage
     true
   end
 
-  def is_welcome_back_page
+  def welcome_back_page?
     screen_actions_helper.hide_keyboard
     action_helper.displayed?(NEED_AN_ACCOUNT)
   end

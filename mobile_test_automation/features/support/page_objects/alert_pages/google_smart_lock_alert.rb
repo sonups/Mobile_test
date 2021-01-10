@@ -1,3 +1,4 @@
+# Page to handle Google smart ock alert
 class GoogleSmartLockAlertPage
   NONE_OF_ABOVE = { id: 'cancel' }.freeze
   SMART_LOCK_IDENTIFIER = { id: 'freezecredential_picker_layout' }.freeze
@@ -8,7 +9,7 @@ class GoogleSmartLockAlertPage
     @action_helper = ActionsHelper.new(driver)
   end
 
-  def getContext
+  def retrieve_context
     action_helper.get_context
   end
 

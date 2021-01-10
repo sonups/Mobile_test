@@ -13,7 +13,7 @@ class MainPage
     @screen_actions_helper = ScreenActionsHelper.new(driver)
   end
 
-  def is_logged_in
+  def logged_in?
     action_helper.displayed?(THREE_DOTS)
   end
 

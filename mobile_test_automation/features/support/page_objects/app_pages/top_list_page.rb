@@ -20,7 +20,7 @@ class TopListPage < MainPage
     true
   end
 
-  def is_current_tab_name_equal(tab_name, i1)
+  def current_tab_name_equal?(tab_name, param)
     # code here
   end
 end

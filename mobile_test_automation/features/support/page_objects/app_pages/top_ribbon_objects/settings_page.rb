@@ -23,10 +23,10 @@ class SettingPage
     action_helper.click(SIGNOUT)
     dialog_box = DialogBox.new(driver)
 
-    until dialog_box.is_dialog_box_present
+    until dialog_box.dialog_box_present?
 
     end
-    if !dialog_box.is_dialog_box_present
+    if !dialog_box.dialog_box_present?
       raise 'Dialogue box not present on clicking signout'
     else
       action_helper.click(DIALOG_BOX_SIGNOUT)
@@ -37,11 +37,9 @@ class SettingPage
     screen_actions_helper.swipe_down until action_helper.displayed?(SIGNOUT)
     action_helper.click(DELETE)
     dialog_box = DialogBox.new(driver)
-
-    until dialog_box.is_dialog_box_present
-
+    until dialog_box.dialog_box_present?
     end
-    if !dialog_box.is_dialog_box_present
+    if !dialog_box.dialog_box_present?
       raise 'Dialogue box not present on clicking delete'
     else
       action_helper.wait_until_element(DIALOG_BOX_DELETE)
