@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# android dialog box
 class DialogBox
   attr_accessor :driver, :action_helper
 

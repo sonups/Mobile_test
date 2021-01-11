@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Helper class to simulate click, capture text, clear text, type appium actions
+# Helper class to simulate hide keyboard, swipe down, swipe up, swipe from element etc.
 class ScreenActionsHelper
   def initialize(driver)
     @driver = driver

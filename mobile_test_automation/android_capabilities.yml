@@ -9,6 +9,6 @@
   :automationName: "UiAutomator2"
   #:browserName: ''
 :appium_lib:
-  :server_url: 'http://127:4723/wd/hub'
+  :server_url: 'http://192.168.128.1:4723/wd/hub'
   :wait_timeout: 30,
   :wait_interval: 1

@@ -1,17 +1,12 @@
 # frozen_string_literal: true
 
+# new profile page
 class NewProfilePage
   DONE_BUTTON = { id: 'vivino.web.app.beta:id/action_done' }.freeze
   FIRST_NAME = { id: 'vivino.web.app.beta:id/edtUserName' }.freeze
   LAST_NAME = { id: 'vivino.web.app.beta:id/edtUserSurname' }.freeze
   ADD_PHOTO = { id: 'vivino.web.app.beta:id/txt_addPhoto' }.freeze
   ACCEPT_TERMS = { id: 'vivino.web.app.beta:id/new_profile_agree_terms' }.freeze
-
-  # vivino.web.app.beta:id/txtCountryValue
-  # vivino.web.app.beta:id/txtChangeLanguageValue
-
-  # if accessibility_id is used as locator prepare the constant like
-  #   I_HAVE_AN_ACCOUNT = { accessibility_id: 'txthaveaccount' }.freeze
 
   attr_accessor :driver, :action_helper, :screen_actions_helper
 

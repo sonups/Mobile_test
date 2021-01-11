@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'common_component_pages/main_page'
+# Page object class of Top list page. This is of the type main page
 class TopListPage < MainPage
-  # TOP_LIST_TAB = { xpath: "//android.view.ViewGroup[@resource-id='vivino.web.app.beta:id/tabanim_toolbar']/*" }.freeze
   TOP_CHARTS_LABEL = { id: 'vivino.web.app.beta:id/txtTopChartsIn' }.freeze
   BEST_WINES_RIGHT_NOW_LABEL = { id: 'vivino.web.app.beta:id/txtComputationalListName' }.freeze
   RIBBON_TEXT = { id: 'vivino.web.app.beta:id/tabanim_toolbar' }.freeze

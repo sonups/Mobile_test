@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Helper class to simulate click, capture text, clear text, type appium actions
 class ActionsHelper
   def initialize(driver)

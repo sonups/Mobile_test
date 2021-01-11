@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'settings_page_item'
-
+# settings page
 class SettingPage
   SIGNOUT = { xpath: "//android.widget.TextView[@text='Sign Out']" }.freeze
   DELETE = { xpath: "//android.widget.TextView[@text='Delete account']" }.freeze
@@ -22,31 +21,28 @@ class SettingPage
     screen_actions_helper.swipe_down until action_helper.displayed?(SIGNOUT)
     action_helper.click(SIGNOUT)
     dialog_box = DialogBox.new(driver)
-
     until dialog_box.dialog_box_present?
+    end
+    raise 'Dialogue box not present on clicking signout' unless dialog_box.dialog_box_present?
 
-    end
-    if !dialog_box.dialog_box_present?
-      raise 'Dialogue box not present on clicking signout'
-    else
-      action_helper.click(DIALOG_BOX_SIGNOUT)
-    end
+    action_helper.click(DIALOG_BOX_SIGNOUT)
   end
 
   def delete_account
+    wait_for_dialog_box
+    action_helper.wait_until_element(DIALOG_BOX_DELETE)
+    action_helper.click(DIALOG_BOX_DELETE)
+    action_helper.type(DELETE_CONFIRM_TEXT_BOX, 'DELETE')
+    action_helper.click(CONFIRM_DELETE_BUTTON)
+  end
+
+  def wait_for_dialog_box
     screen_actions_helper.swipe_down until action_helper.displayed?(SIGNOUT)
     action_helper.click(DELETE)
     dialog_box = DialogBox.new(driver)
     until dialog_box.dialog_box_present?
     end
-    if !dialog_box.dialog_box_present?
-      raise 'Dialogue box not present on clicking delete'
-    else
-      action_helper.wait_until_element(DIALOG_BOX_DELETE)
-      action_helper.click(DIALOG_BOX_DELETE)
-      action_helper.type(DELETE_CONFIRM_TEXT_BOX, 'DELETE')
-      action_helper.click(CONFIRM_DELETE_BUTTON)
-    end
+    raise 'Dialogue box not present on clicking delete' unless dialog_box.dialog_box_present?
   end
 
   def get_xpath_(_text)

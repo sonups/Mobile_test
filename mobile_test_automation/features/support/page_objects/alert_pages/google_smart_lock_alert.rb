@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Page to handle Google smart ock alert
 class GoogleSmartLockAlertPage
   NONE_OF_ABOVE = { id: 'cancel' }.freeze

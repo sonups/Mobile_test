@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
+# Page object class of initial welcome page
 class WelcomePage
   GET_STARTED = { id: 'getstarted_layout' }.freeze
   SEE_HOW_IT_WORKS = { id: 'seehowitwork' }.freeze
   TRY_US_OUT = { id: 'txtTryUsOut' }.freeze
   I_HAVE_AN_ACCOUNT = { id: 'txthaveaccount' }.freeze
-  # if accessibility_id is used as locator prepare the constant like
-  #   I_HAVE_AN_ACCOUNT = { accessibility_id: 'txthaveaccount' }.freeze
 
   attr_accessor :driver, :action_helper
 

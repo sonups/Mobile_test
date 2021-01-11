@@ -2,23 +2,16 @@
 
 require 'pry'
 require_relative '../../features/support/drivers/android_driver'
-require_relative '../../features/support/drivers/android_smart_lock_driver'
 require_relative '../../features/support/helper_class/actions_helper'
 
-class Hook
+# handler for appium driver - activities like start_driver , stop_driver, restart_driver are implemented
+class DriverHook
   include Singleton
-  attr_reader :is_driver_created
-  attr_accessor :driver
 
   NUMBER_FIELD1 = { accessibility_id: 'inputA' }.freeze
 
-  def accept_smark_lock_security
-    @port = { port: '4723' }
-
-    smart_lock_driver = Class.new(SmartLockDriver).instance
-    smart_lock_driver.create_driver(@port)
-    smart_lock_driver.start_driver
-  end
+  attr_reader :is_driver_created
+  attr_accessor :driver
 
   def setup_driver
     unless is_driver_created
@@ -32,13 +25,17 @@ class Hook
   end
 
   def launch_app(package, activity)
-    # @driver
-    # @driver.launch_app
     @driver.start_activity app_package: package, app_activity: activity
   end
 
   def tear_down
     LocalDriver.instance.stop_app
-    # helper.kill_appium if start_appium?
+  end
+
+  def accept_smark_lock_security
+    @port = { port: '4723' }
+    smart_lock_driver = Class.new(SmartLockDriver).instance
+    smart_lock_driver.create_driver(@port)
+    smart_lock_driver.start_driver
   end
 end

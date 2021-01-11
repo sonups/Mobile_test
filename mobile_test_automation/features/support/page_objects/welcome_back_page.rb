@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Page object class of welcome back page after sign-out
 class WelcomeBackPage
   EMAIL = { id: 'vivino.web.app.beta:id/edtEmail' }.freeze
   PASSWORD = { id: 'vivino.web.app.beta:id/edtPassword' }.freeze

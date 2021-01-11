@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 require 'yaml'
 require 'pry'
 require_relative '../base_driver'
-require_relative '../../support/properties/run_properties_label'
 require_relative '../../support/properties/environments_label'
 
 # Implementation of Base driver. More Android specific features can be added the implentation based on requirement

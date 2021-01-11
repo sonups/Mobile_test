@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
+# creat account page
 class CreateAccountPage
   EMAIL = { id: 'vivino.web.app.beta:id/edtEmail' }.freeze
   PASSWORD = { id: 'vivino.web.app.beta:id/edtPassword' }.freeze
   CONTINUE_WITH_FACEBOOK = { id: 'vivino.web.app.beta:id/signupwithfacebook_layout' }.freeze
   CONTINUE_WITH_GOOGLE = { id: 'vivino.web.app.beta:id/signupwithgoogle_layout' }.freeze
   NEXT = { id: 'vivino.web.app.beta:id/action_next' }.freeze
-
-  # if accessibility_id is used as locator prepare the constant like
-  #   I_HAVE_AN_ACCOUNT = { accessibility_id: 'txthaveaccount' }.freeze
 
   attr_accessor :driver, :action_helper
 

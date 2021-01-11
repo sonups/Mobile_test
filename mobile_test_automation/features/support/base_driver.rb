@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'singleton'
 require 'appium_lib'
 # Base class handling the appium driver features such as start driver, stop driver, restart automation app .
